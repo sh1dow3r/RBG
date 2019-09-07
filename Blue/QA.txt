@@ -4,11 +4,14 @@ Date: 08/29/2019
 
 
 (10 points)What is the difference between ingress and egress firewall rules?
-Ingress firewall rules are, while egress firewall rules 
+Ingress firewall rules are firewall rule that inspect packet that enter the local network from an external network, while egress firewall are firewall rule that examice the packets that orginates from the local network and travel across the router to an external destination.  
 
 (10 points) With Iptables, what is the difference between the “filter table” and the “mangletable”?
-Iptables filter table deals with 
-Iptables mangletalbe 
+Iptables filter table as it's name specifies can filter packets based on the given arguments while iptables mangletalbe allows for manipulets the packet headers' values or marking the packets for further processing,   
 
 (10 points) Does order matter when writing firewall rules? What are situations whereorder doesn't matter? What are situations when order does matter?
-Firewall ordering depends on  
+Firewall processing varies from one binary/software to another, so it depends on the type of binary you're using. For example, iptables follows the logic of ordering, where if the packets matches a rule, it won't go to the next one. On the other hand, windows firewall follows anther logic where it goes through 4 phases other than "actual line ordering":
+1- Authenticated bypass: which override block rules, 
+2- block connection: which search for block connection matches, 
+3- allow connection: which search for allowed connection matches 
+4- Default profile behavior. The default behavior is to block unsolicited inbound network traffic, but to allow all outbound network traffic.   
