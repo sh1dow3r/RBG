@@ -1,0 +1,14 @@
+Author: Ali Alamri
+Course: Cyber Defensive Technique
+Date: 08/29/2019
+
+
+(10 points)What is the difference between ingress and egress firewall rules?
+Ingress firewall rules are, while egress firewall rules 
+
+(10 points) With Iptables, what is the difference between the “filter table” and the “mangletable”?
+Iptables filter table deals with 
+Iptables mangletalbe 
+
+(10 points) Does order matter when writing firewall rules? What are situations whereorder doesn't matter? What are situations when order does matter?
+Firewall ordering depends on  
