@@ -32,14 +32,14 @@ firewall -DisplayName "Allow outbound DNS UDP" -Direction Outbound -Protocol UDP
 #Ports needed for AD --> clients to connect, authenticate, and resolvethrough this server. 
 #Allow RPC Endpoint Mapper, LDAP, Kerberos, LDAP SSL, SMB inbound TCP and UDP if needed
 #########################################
-#88/TCP/UDP	   Kerberos                 #
-#135/TCP	   RPC Endpoint Mapper      #
+#88/TCP/UDP	   Kerberos             #
+#135/TCP	   RPC Endpoint Mapper  #
 #137/TCP       NetBIOS for user auth    #
 #138/UDP       NetBIOS for GPOs,logon   #
 #139/TCP       NetBIOS Session          #
 #389/TCP/UDP   LDAP                     #
-#445/TCP	   SMB                      #
-#636/TCP	   LDAP SSL                 #
+#445/TCP	   SMB                  #
+#636/TCP	   LDAP SSL             #
 #########################################
 firewall -DisplayName "Allow Kerberos, RPC, LDAP-LDAP/SSL SMB, NetBios inbound TCP" -Direction Inbound -Protocol TCP -LocalPort 88,135,137, 139,389,445,636 -Action Allow
 
