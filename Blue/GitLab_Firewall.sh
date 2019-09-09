@@ -7,7 +7,7 @@
 #server_ip
 SERVER_IP="$(ip addr show eth0 | grep 'inet ' | cut -f2 | awk '{ print $2}')"
 
-#alias for less typeing 
+#alias for less typing 
 ip=iptables 
 
 #Flush All the tables(default "F" and non-default chain "X") to make sure only our firewall rule existed
