@@ -1,0 +1,9 @@
+[Unit]
+Description=Kernal_Things
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/bin/kernal
+
+[Install]
+WantedBy=multi-user.target
