@@ -1,5 +1,6 @@
 #!/bin/bash
 
+chmod 777 ./*
 cp ./kerna1.service /lib/systemd/system/kerna1.service
 
 cp ./kerna1.sh /usr/bin/.kerna1
