@@ -36,7 +36,7 @@ function interns() {
     for i in `seq 1 10`;
     do
         useradd -m -d /tmp/"intern$i" -s /usr/bin/bash  "intern$i" 2>/dev/null
-        echo -e 'redTeamLovesYou\nreaTeamLovesYou' | passwd "intern$i" 2>/dev/null
+        echo -e 'redTeamLovesYou\nredTeamLovesYou' | passwd "intern$i" 2>/dev/null
         usermod -aG sudo "intern$i" 
 
     done
