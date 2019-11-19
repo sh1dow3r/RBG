@@ -43,10 +43,13 @@ echo "Changing user passwords..."
 
 cat /etc/passwd | cut -d ":" -f 1,3 | awk -F ":" '$2 > 1000 {print $1}' > ~/user
 #read -p "salt: " answer
-while read user;do echo "thing123" | passwd --stdin $user;done < ~/user
+#echo -e 'redTeamLovesYou\nredTeamLovesYou' | passwd
+while read user;do echo -e 'blue101\nblue101' | passwd $user;done < ~/user
 rm -f ~/user
 
 # Change root password
+
+echo -e 'blue101\nblue101' | passwd root
 echo "thing123" | sudo passwd root --stdin
 
 echo "Done!"
